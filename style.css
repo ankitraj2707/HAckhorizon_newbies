@@ -1,0 +1,61 @@
+/* welfare.css */
+
+body {
+    background-color: #f9fafb;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1 {
+    color: #1f2937;
+  }
+  
+  .card {
+    border: 1px solid #e5e7eb;
+    border-radius: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    background-color: white;
+  }
+  
+  input, textarea {
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    width: 100%;
+    font-size: 1rem;
+  }
+  
+  button {
+    background-color: #2563eb;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #1d4ed8;
+  }
+  
+  .tabs-trigger {
+    background-color: #e0f2fe;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    margin-right: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .tabs-trigger.active {
+    background-color: #2563eb;
+    color: white;
+  }
+  
+  .fixed-buttons {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    display: flex;
+    gap: 0.5rem;
+  }
+  
