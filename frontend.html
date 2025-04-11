@@ -1,0 +1,66 @@
+
+    <div className="p-4 max-w-4xl mx-auto">
+      <h1 className="text-3xl font-bold mb-4">Welfare Access Platform</h1>
+
+      <Tabs defaultValue="profile">
+        <TabsList className="mb-4">
+          <TabsTrigger value="profile">Profile</TabsTrigger>
+          <TabsTrigger value="schemes">Eligible Schemes</TabsTrigger>
+          <TabsTrigger value="vault">Document Vault</TabsTrigger>
+          <TabsTrigger value="chat">Chatbot</TabsTrigger>
+        </TabsList>
+        <link rel="stylesheet" href="style.css">
+
+        <TabsContent value="profile">
+          <Card>
+            <CardContent className="space-y-4 p-4">
+              <Input placeholder="Age" onChange={(e) => handleProfileChange('age', e.target.value)} />
+              <Input placeholder="Income" onChange={(e) => handleProfileChange('income', e.target.value)} />
+              <Input placeholder="Occupation" onChange={(e) => handleProfileChange('occupation', e.target.value)} />
+              <Input placeholder="Location" onChange={(e) => handleProfileChange('location', e.target.value)} />
+              <Button onClick={checkEligibility}>Check Eligibility</Button>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="schemes">
+          <div className="grid gap-4">
+            {schemes.map((scheme, index) => (
+              <Card key={index}>
+                <CardContent className="p-4">
+                  <h2 className="text-xl font-semibold">{scheme.name}</h2>
+                  <p className="text-sm text-muted">Deadline: {scheme.deadline}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </TabsContent>
+
+        <TabsContent value="vault">
+          <Card>
+            <CardContent className="space-y-4 p-4">
+              <p>Secure document vault for uploading and autofill.</p>
+              <Input type="file" />
+              <Button>Upload Document</Button>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="chat">
+          <Card>
+            <CardContent className="p-4 space-y-2">
+              <Textarea placeholder="Ask your question about schemes..." />
+              <Button>Send</Button>
+            </CardContent>
+          </Card>
+        </TabsContent>
+      </Tabs>
+
+      <div className="fixed bottom-4 right-4 flex gap-2">
+        <Button variant="outline"><Languages className="w-4 h-4 mr-2" />{language.toUpperCase()}</Button>
+        <Button variant="outline"><Bell className="w-4 h-4" /></Button>
+        <Button variant="outline"><FileText className="w-4 h-4" /></Button>
+      </div>
+    </div>
+  );
+}
